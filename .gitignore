@@ -5,3 +5,6 @@ build
 derby.log
 metastore_db
 out
+dependency-reduced-pom.xml
+maven/target
+quickstart.iml

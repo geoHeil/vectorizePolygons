@@ -12,3 +12,11 @@ Caused by: java.lang.IllegalArgumentException: ImageRead: No OperationDescriptor
 
 
 when looking at the jai registration files in [registryFilesGenerated](registryFilesGenerated) none of them sadly contains the `vectors` registration.
+
+When executing using IntelliJ
+
+it get's one step furhter:
+````
+Exception in thread "main" java.lang.IllegalArgumentException: minValue greater than maxValue
+
+````
