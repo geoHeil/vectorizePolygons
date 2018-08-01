@@ -15,8 +15,8 @@ when looking at the jai registration files in [registryFilesGenerated](registryF
 
 When executing using IntelliJ
 
-it get's one step furhter:
+it works just fine
 ````
-Exception in thread "main" java.lang.IllegalArgumentException: minValue greater than maxValue
+POLYGON ((0 0, 50 0, 50 50, 150 50, 150 150, 200 150, 200 250, 50 250, 50 200, 100 200, 100 150, 0 150, 0 0))
 
 ````

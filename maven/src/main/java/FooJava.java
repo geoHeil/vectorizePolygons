@@ -50,7 +50,7 @@ public class FooJava {
     }
 
     public static String getWktForDbRangeFromRaster(GridCoverage2D input, Integer value) throws Exception {
-        Range range = Range.create(value, true, 0, false);
+        Range range = Range.create(value, true, 200, false);
         List<Range> classificationRanges = Arrays.asList(range);
 
         // TODO optimization: can we initialize an Array of fixed length?

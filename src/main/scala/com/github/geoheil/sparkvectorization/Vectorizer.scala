@@ -2,12 +2,15 @@ package com.github.geoheil.sparkvectorization
 
 import java.io.ByteArrayInputStream
 import java.nio.charset.StandardCharsets
+import java.util
+import java.util.Arrays
 
 import com.vividsolutions.jts.geom.Geometry
 import com.vividsolutions.jts.io.WKTWriter
 import org.geotools.coverage.grid.GridCoverage2D
 import org.geotools.gce.arcgrid.ArcGridReader
 import org.geotools.process.raster.PolygonExtractionProcess
+
 import scala.collection.JavaConversions._
 
 object Vectorizer {
@@ -38,10 +41,10 @@ object Vectorizer {
   }
 
   def getWKTForValueRange(input: GridCoverage2D, valueRange: Int): String = {
-    val r = org.jaitools.numeric.Range.create(Integer.valueOf(valueRange), true, Integer.valueOf(0), false)
+    val r = org.jaitools.numeric.Range.create(Integer.valueOf(valueRange), true, Integer.valueOf(200), false)
     val classificationRanges = Seq(r)
     // TODO optimization: can we initialize an Array of fixed length?
-    val vectorizedFeatures = extractor.execute(input, 0, true, null, null, classificationRanges, null).features
+    val vectorizedFeatures = extractor.execute(input, 0, true, null, util.Arrays.asList(-9999), classificationRanges, null).features
     var firstElement = true
     var result:String = null
     while ( {
